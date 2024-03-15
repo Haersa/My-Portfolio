@@ -1,60 +1,113 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
-
-html {
-    height: 100%;
-    width: 100%;
-  
-  }
   
   
   body {
-    background-color: var(--black);
+    background-color: var(--white);
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
   }
   
   
+/* start of root styles */
+
+
   :root {
   
-    --black: #000000;
-    /*black for navigation and body background*/
-    --orange: #eb5e28;
-    /*heading text*/
-    --white: #fffcf2;
-    /*other text & navbar colour*/
-  
+    --black: #1e1d20;
+
+    --red: #ff4654;
+   
+    --white: #f6f6f6;
   }
   
-  header {
-    display: flex;
-    justify-content: center;
-    place-items: center;
-    border-bottom: 2px solid var(--orange);
-    letter-spacing: 1.2px;
-    font-family: Manrope;
-  }
-  
-  header nav ul {
-    display: flex;
-    list-style-type: none;
-  }
-  
-  header nav ul li {
-    padding: 10px;
-  }
-  
-  header nav ul li a {
-    text-decoration: none;
-    color: var(--white);
-  }
-  
-  .intro {
-    display: flex;
-    justify-content: center;
-    place-items: center;
-  }
-  
-  .intro h1 {
-    color: var(--orange);
-    font-family: Manrope;
-  }
+/*end of root styles*/
+
+
+/*start of light/dark toggler*/
+
+
+body.dark {background-color: var(--black);} 
+
+body.dark h1, body.dark a {color: var(--white)}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-label {
+  background-color: #02075d;
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  position: relative;
+  padding: 1px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+.checkbox-label .ball {
+  background-color: #fff;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(24px);
+}
+
+/*end of light/dark toggler*/
+
+
+
+
+
+
+
+  header { position: sticky!important;
+  top: 0;
+}
+
+.nav-menu{
+  display: flex;
+  justify-content: end;
+  padding-top: 30px;
+  height: 15vh;
+ 
+
+
+
+}
+
+.menu-links{
+  padding-inline: 100px !important;
+  margin-right: 100px;
+
+
+}
+
+.menu-links a{
+
+  text-decoration: none;
+  color: var(--black);
+  font-family: 'Manrope';
+  font-size: large;
+  padding-left: 50px;
+}
+
+.menu-links a:hover{
+  color: var(--red);
+}
+
